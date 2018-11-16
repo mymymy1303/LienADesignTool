@@ -28,7 +28,7 @@ app.controller("mainControl", function ($scope, $http, $rootScope) {
 	$scope.showdone = false;
 	// $scope.buildimagedone = false
 	($scope.CAT_URL = getUrlParameter("productid")),
-	($scope.PA_URL = getUrlParameter("pat"));
+		($scope.PA_URL = getUrlParameter("pat"));
 	$scope.lang = {
 		loading: "Đang tải dữ liệu...",
 		pattern: "Mẫu",
@@ -179,24 +179,24 @@ app.controller("mainControl", function ($scope, $http, $rootScope) {
 		const serial = funcs =>
 			funcs.reduce(
 				(promise, func) =>
-				promise
-				.then(result =>
-					func().then(Array.prototype.concat.bind(result))
-				)
-				.catch(error => Array.prototype.concat.bind(error)),
+					promise
+						.then(result =>
+							func().then(Array.prototype.concat.bind(result))
+						)
+						.catch(error => Array.prototype.concat.bind(error)),
 				Promise.resolve([])
 			);
 
 		const funcs = $rootScope.genIMG.map(image => () =>
 			createImage(image.url)
-			.then(img => drawImage(img, image.colorCode))
-			.catch(error => console.log(error))
+				.then(img => drawImage(img, image.colorCode))
+				.catch(error => console.log(error))
 		);
 
 		const funcsCover = $rootScope.genIMG.map(image => () =>
 			createImage(image.url_cover)
-			.then(img => drawImage(img, ""))
-			.catch(error => console.log(error))
+				.then(img => drawImage(img, ""))
+				.catch(error => console.log(error))
 		);
 
 		//Xen kẽ hai array để khi vẽ image lên canvas sẽ vẽ
@@ -279,8 +279,24 @@ app.controller("mainControl", function ($scope, $http, $rootScope) {
 	};
 
 	$scope.shareImage = function () {
-		let newsFullPath = document.URL;
-		let newsFullPathEncode = encodeURIComponent(newsFullPath);
+		// let newsFullPath = document.URL;
+		// let newsFullPathEncode = encodeURIComponent(newsFullPath);
+
+
+		let patStringArray = []
+		$rootScope.dataPat.forEach(patCode => {
+			if (patCode == null) {
+				patStringArray.push('-')
+			} else {
+				patStringArray.push(patCode)
+			}
+		});
+		let patString = patStringArray.join(',')
+		let baseUrlArray = document.URL.split('pat=')
+		baseUrlArray[1] = patString
+		let baseUrl = baseUrlArray.join('pat=')
+		let newsFullPathEncode = encodeURIComponent(baseUrl)
+
 		window.open(
 			`https://www.facebook.com/sharer/sharer.php?u=${newsFullPathEncode}&src=sdkpreparse`
 		)
@@ -379,25 +395,25 @@ function getMaterial(el, $scope, $http, $rootScope) {
 	$scope.itemsPerPage = $scope.viewby;
 	$scope.maxSize = 3;
 	$scope.select = [{
-			id: 12,
-			name: "12"
-		},
-		{
-			id: 20,
-			name: "20"
-		},
-		{
-			id: 24,
-			name: "24"
-		},
-		{
-			id: 40,
-			name: "40"
-		},
-		{
-			id: 48,
-			name: "48"
-		}
+		id: 12,
+		name: "12"
+	},
+	{
+		id: 20,
+		name: "20"
+	},
+	{
+		id: 24,
+		name: "24"
+	},
+	{
+		id: 40,
+		name: "40"
+	},
+	{
+		id: 48,
+		name: "48"
+	}
 	];
 	$scope.viewby = $scope.select[0];
 	$scope.setPage = function (pageNo) {
