@@ -1,0 +1,62 @@
+header
+	// .navbar
+	// 	+pad(null 0)
+	// .navbar-brand
+	// 	img 
+	// 		max-height: 2rem
+	// +media-breakpoint-up(md)
+	// 	.navbar-brand
+	// 		img 
+	// 			max-height: 3rem
+	// position: fixed
+	width: 100%
+	top: 0
+	left: 0
+	height: 60px
+	background-color: #0d1d42
+	display: flex
+	align-items: center
+	.close
+		a 
+			color: #fff
+	.overlay, 
+	.btn-showmenu,
+	.tool-right,
+	.btn-closemenu,
+	.sitelogo-mb
+		display: none
+	.container
+		// display: flex
+		align-items: center
+		max-width: initial
+		padding-left: 2rem
+		.sitelogo
+			display: flex
+			margin-right: auto
+			img
+				width: 112px
+		
+		.col-right
+			justify-content: flex-end
+			display: none
+			ul 
+				li 
+					a 
+						text-transform: uppercase
+						font-size: 0.875rem
+						color: #808080
+						font-weight: 300
+						// height: 80px
+						// line-height: 80px
+						padding: 0 20px
+						text-decoration: none
+					&:hover 
+						a 
+							color: #fff
+			.nav-img, .nav-child
+				display: none
+			.main-menu
+				.hassub, .hassubPrd
+					.btn-showsub, nav
+						display: none
+

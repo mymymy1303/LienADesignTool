@@ -1,0 +1,68 @@
+.control-bar
+	background: #fff
+	+pos(abs, null null 0 50%)
+	+transform(translateX(-50%) translateY(100%))
+	+bor-rad(0 0)
+	overflow: hidden
+	transition: .5s all ease-in-out 
+	box-shadow: 0 1px 11px 5px rgba(0,0,0,.15)
+	border: 1px solid darken($whites,15%)
+	border-bottom: 0
+	&.active 
+		transform: translateX(-50%) translateY(0%)
+	ul 
+		flex-wrap: nowrap
+		li 
+			+mar(0_)
+			a 
+				display: inline-block
+				+pad(.5rem 1rem)
+				text-decoration: none
+				color: darken($whites, 60%)
+				box-shadow: -1px 0 0 0 darken($whites, 10%) inset
+				position: relative
+				display: flex
+				align-items: center
+				white-space: nowrap
+				i 
+					width: 2.5rem
+					height: 2.5rem
+					line-height: 2.5rem
+					background: darken($whites, 5%)
+					margin-right: .5rem
+					+bor-rad(50%)
+				em
+					width: 2.5rem
+					height: 2.5rem
+					line-height: 2.5rem
+					background: darken($whites, 5%)
+				// &:before 
+				// 	content: ''
+				// 	display: block
+				// 	width: 1px
+				// 	height: 100% 
+				// 	background: darken($whites, 0%)
+				// 	+pos(abs, null -1px 0 null)
+			&:hover, &.active
+				box-shadow: 0 1px 11px 5px rgba(0,0,0,.15)
+				z-index: 999
+				a 
+					color: $liena
+					background: darken($whites, 0%)
+					box-shadow: none
+			&:last-child
+				a
+					box-shadow: none
+			&.toggle
+				a 
+					+pad(0)
+					height: 100%
+					em 
+						height: 100%
+						+pad(0 1.5rem)
+						display: flex
+						align-items: center
+						justify-content: center
+.breadcrumb
+	+bor-rad(0)
+	color: darken(#fff,60%)
