@@ -6,211 +6,214 @@
 	width: 100%
 	height: calc(100vh - 60px)
 .canhcam-design-1
-	height: calc(100vh - 60px)
-	overflow: hidden
-	.box-product
-		// box-shadow: 0 0 0 1px darken($whites,5%) inset
-		+mar(1rem)
-		+pad(1rem)
-		padding-top: 0
-		padding-bottom: 0
-		margin-bottom: 0
-		position: relative
-		.showloading-material
-			+pos(abs, 0 null null 0)
-			width: 100%
-			height: 100%
-			+pad(1rem)
-			opacity: 0
-			z-index: -1
-			transition: .3s all ease-in-out
-			background: #fff
-			&.active
-				opacity: 1
-				z-index: 100
-			.inner
-				display: block
-				background: $liena
-				color: $lienavang
-				+bor-rad(5px)
-				+pad(.75rem 1.2rem)
-				+mar(0 auto)
-				width: auto
-				text-align: center
-				max-width: 200px
-		.apply-content
-			overflow: hidden
-	.select
-		display: flex
-		flex-wrap: wrap
+	+media-breakpoint-down(md)
+		overflow-x: hidden
+	+media-breakpoint-up(lg)
 		height: calc(100vh - 60px)
-		.select-color
-			display: flex
-			flex-direction: column
-			flex: 0 0 130px
-			max-width: 130px
-			background: darken($whites,5%)
-			border-left: 1px solid darken($whites,10%)
-			border-right: 1px solid darken($whites,10%)
-			ul 
-				text-align: center
-				+mar(0)
-				+pad(0)
-				li
-					margin-right: 0
-					list-style-type: none
-					+fz(.85rem)
-					border-bottom: 1px solid darken($whites,10%)
-					position: relative
-					height: 100%
-					display: flex
-					justify-content: center
-					align-items: center
-					&:before 
-						content: ''
-						display: block
-						width: 100%
-						height: 1px 
-						background: darken($whites,3%)
-						+pos(abs, null 0 -2px null)
-					&.title
-						line-height: 1.5rem
-						font-size: 1.1rem
-						font-weight: bold
-						background: $liena
-						color: $lienavang
-						padding: 0.75rem 1rem
-						
-					a 
-						display: block
-						text-decoration: none
-						+pad(1.5rem .75rem)
-						+lh(1.3rem)
-						color: darken($whites,60%)
-						text-transform: uppercase
-						+fw(600)
-						img
-							max-width: 60%
-							margin-bottom: .25rem
-							filter: grayscale(100%)
-							opacity: .5
-						span 
-							display: block
-							+lh(1rem)
-						i 
-							+fz(1.6rem)
-					&:hover,&.active 
-						box-shadow: 0 0 8px 3px rgba(0,0,0,.15)
-						border-bottom: 1px solid transparent
-						background-color: #ffffff
-						&:before 
-							content: ''
-							display: none
-						a 
-							background: #fff
-							color: $liena
-							img
-								filter: grayscale(0%)
-								opacity: 1
-					&:hover
-						z-index: 1000
-		.select-nav
-			flex: 0 0 calc(100% - 130px)
-			max-width: calc(100% - 130px)
+		overflow: hidden
+		.box-product
+			// box-shadow: 0 0 0 1px darken($whites,5%) inset
+			+mar(1rem)
+			+pad(1rem)
+			padding-top: 0
+			padding-bottom: 0
+			margin-bottom: 0
 			position: relative
-			height: 100%
-			overflow-y: auto
-			// padding-bottom: 10rem
-			.showloading
+			.showloading-material
 				+pos(abs, 0 null null 0)
 				width: 100%
 				height: 100%
 				+pad(1rem)
-				z-index: 999
-				background: #fff
-				display: flex
-				justify-content: center
-				align-items: center
 				opacity: 0
 				z-index: -1
 				transition: .3s all ease-in-out
+				background: #fff
 				&.active
 					opacity: 1
 					z-index: 100
-			.select-nav-color
-				+pad(0 1rem)
-				// height: 100%
-				select 
-					+bor-rad(0)
-				.list-item
-					+pad(1rem 0)
-					display: flex
-					-webkit-flex-flow: row wrap
-					margin: 0 -.25rem
-					overflow: hidden
-					max-height: calc(100vh - 15rem)
-					align-content: flex-start
-					.item
-						display: block
-						width: calc(100% - .5rem)
-						margin: 0 .25rem
-						transition: .3s ease-in-out
-						margin-bottom: .5rem
-						background-size: cover
-						background-position: center center
+				.inner
+					display: block
+					background: $liena
+					color: $lienavang
+					+bor-rad(5px)
+					+pad(.75rem 1.2rem)
+					+mar(0 auto)
+					width: auto
+					text-align: center
+					max-width: 200px
+			.apply-content
+				overflow: hidden
+		.select
+			display: flex
+			flex-wrap: wrap
+			height: calc(100vh - 60px)
+			.select-color
+				display: flex
+				flex-direction: column
+				flex: 0 0 130px
+				max-width: 130px
+				background: darken($whites,5%)
+				border-left: 1px solid darken($whites,10%)
+				border-right: 1px solid darken($whites,10%)
+				ul 
+					text-align: center
+					+mar(0)
+					+pad(0)
+					li
+						margin-right: 0
+						list-style-type: none
+						+fz(.85rem)
+						border-bottom: 1px solid darken($whites,10%)
 						position: relative
+						height: 100%
+						display: flex
+						justify-content: center
+						align-items: center
 						&:before 
-							display: block
 							content: ''
-							box-shadow: 0 0 0 1px darken($whites,10%) inset
-							+pos(abs, 0 0 null null)
+							display: block
 							width: 100%
-							height: 100%
-							z-index: 99
-						+media-breakpoint-up(sm)
-							width: calc(100% - .5rem)
-						+media-breakpoint-up(md)
-							width: calc(100% - .5rem)
-						+media-breakpoint-up(lg)
-							width: calc(20% - .5rem)
-						@media (min-width: 1400px)
-							width: calc(20% - .5rem)
-						@media (min-width: 1600px)
-							width: calc(20% - .5rem)
-						.box
-							height: 100%
-							width: 100%
-							display: flex
-							flex-direction: column
+							height: 1px 
+							background: darken($whites,3%)
+							+pos(abs, null 0 -2px null)
+						&.title
+							line-height: 1.5rem
+							font-size: 1.1rem
+							font-weight: bold
+							background: $liena
+							color: $lienavang
+							padding: 0.75rem 1rem
+							
+						a 
+							display: block
 							text-decoration: none
-							.color
-								+size(100%, 5rem)
-								min-width: 50px
-								background: #dfdfdf
-								box-shadow: inset 0px 0 0 1px darken($whites,10%)
-							.text
-								color: darken($whites,60%)
-								+pad(.5rem )
-								+fz(.85rem)
+							+pad(1.5rem .75rem)
+							+lh(1.3rem)
+							color: darken($whites,60%)
+							text-transform: uppercase
+							+fw(600)
+							img
+								max-width: 60%
+								margin-bottom: .25rem
+								filter: grayscale(100%)
+								opacity: .5
+							span 
+								display: block
+								+lh(1rem)
+							i 
+								+fz(1.6rem)
+						&:hover,&.active 
+							box-shadow: 0 0 8px 3px rgba(0,0,0,.15)
+							border-bottom: 1px solid transparent
+							background-color: #ffffff
+							&:before 
+								content: ''
+								display: none
+							a 
+								background: #fff
+								color: $liena
+								img
+									filter: grayscale(0%)
+									opacity: 1
+						&:hover
+							z-index: 1000
+			.select-nav
+				flex: 0 0 calc(100% - 130px)
+				max-width: calc(100% - 130px)
+				position: relative
+				height: 100%
+				overflow-y: auto
+				// padding-bottom: 10rem
+				.showloading
+					+pos(abs, 0 null null 0)
+					width: 100%
+					height: 100%
+					+pad(1rem)
+					z-index: 999
+					background: #fff
+					display: flex
+					justify-content: center
+					align-items: center
+					opacity: 0
+					z-index: -1
+					transition: .3s all ease-in-out
+					&.active
+						opacity: 1
+						z-index: 100
+				.select-nav-color
+					+pad(0 1rem)
+					// height: 100%
+					select 
+						+bor-rad(0)
+					.list-item
+						+pad(1rem 0)
+						display: flex
+						-webkit-flex-flow: row wrap
+						margin: 0 -.25rem
+						overflow: hidden
+						max-height: calc(100vh - 15rem)
+						align-content: flex-start
+						.item
+							display: block
+							width: calc(100% - .5rem)
+							margin: 0 .25rem
+							transition: .3s ease-in-out
+							margin-bottom: .5rem
+							background-size: cover
+							background-position: center center
+							position: relative
+							&:before 
+								display: block
+								content: ''
+								box-shadow: 0 0 0 1px darken($whites,10%) inset
+								+pos(abs, 0 0 null null)
+								width: 100%
+								height: 100%
+								z-index: 99
+							+media-breakpoint-up(sm)
+								width: calc(100% - .5rem)
+							+media-breakpoint-up(md)
+								width: calc(100% - .5rem)
+							+media-breakpoint-up(lg)
+								width: calc(20% - .5rem)
+							@media (min-width: 1400px)
+								width: calc(20% - .5rem)
+							@media (min-width: 1600px)
+								width: calc(20% - .5rem)
+							.box
+								height: 100%
+								width: 100%
 								display: flex
 								flex-direction: column
-								align-items: center
-								justify-content: center
-								strong
-									+fw(500)
-									+lh(1rem)
-								span 
-									display: block
-									+fz(1rem)
-						&:hover, &.active
-							&:before 
-								box-shadow: 0 0 5px 2px rgba(0,0,0,.15), 0 0 0 1px $liena inset, 0 0 40px rgba(0, 0, 0, 0.1)
-								z-index: 100
-								cursor: pointer
-							.box
-								cursor: pointer
+								text-decoration: none
+								.color
+									+size(100%, 5rem)
+									min-width: 50px
+									background: #dfdfdf
+									box-shadow: inset 0px 0 0 1px darken($whites,10%)
 								.text
-									color: darken($liena,0%)
+									color: darken($whites,60%)
+									+pad(.5rem )
+									+fz(.85rem)
+									display: flex
+									flex-direction: column
+									align-items: center
+									justify-content: center
+									strong
+										+fw(500)
+										+lh(1rem)
+									span 
+										display: block
+										+fz(1rem)
+							&:hover, &.active
+								&:before 
+									box-shadow: 0 0 5px 2px rgba(0,0,0,.15), 0 0 0 1px $liena inset, 0 0 40px rgba(0, 0, 0, 0.1)
+									z-index: 100
+									cursor: pointer
+								.box
+									cursor: pointer
+									.text
+										color: darken($liena,0%)
 
 .pagination
 	li 
