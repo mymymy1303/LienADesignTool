@@ -1,0 +1,206 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="~/App_MasterPages/layout.Master.cs" Inherits="CanhCam.Web.layout" %>
+
+<!DOCTYPE html>
+<html id="Html1" runat="server">
+<head id="Head1" runat="server">
+    <title></title>
+    <portal:MetaContent ID="MetaContent" runat="server" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <portal:StyleSheetCombiner ID="StyleSheetCombiner" runat="server" IncludejQueryUI="false" JQueryUIThemeName="smoothness" />
+    <portal:Favicon ID="Favicon1" runat="server" />
+    <portal:ScriptLoader ID="ScriptLoader1" runat="server" IncludejQueryUICore="true" IncludeFancyBox="true" />
+    <portal:SkinFolderScript ID="SkinFolderScript1" runat="server" ScriptFileName="js/addons.js" AddToCombinedScript="true" />
+    <portal:SkinFolderScript ID="SkinFolderScript2" runat="server" ScriptFileName="js/main.js" AddToCombinedScript="true" />
+    <portal:SkinFolderScript ID="SkinFolderScript3" runat="server" ScriptFileName="js/ecommerce.js" AddToCombinedScript="true" />
+    <portal:SkinFolderScript ID="SkinFolderScript4" runat="server" ScriptFileName="js/compare.min.js" AddToCombinedScript="true" />
+    <portal:SkinFolderScript ID="SkinFolderScript5" runat="server" ScriptFileName="js/comment.js" AddToCombinedScript="true" />
+    <portal:GoogleAnalyticsScript ID="GoogleAnalyticsScript1" runat="server" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<script lang="javascript">var _vc_data = {id : 5755775, secret : 'd92a4d995945867e98c0f59964be55ec'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//live.vnpgroup.net/client/tracking.js?id=5755775';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>
+	
+</head>
+<body id="Body" runat="server" class="canhcam">
+    <portal:FacebookSdk ID="fbsdk" runat="server" />
+    <portal:LayoutDisplaySettings ID="LayoutDisplaySettings1" runat="server" />
+    <form id="frmMain" runat="server">
+        <asp:SiteMapDataSource ID="SiteMapData" runat="server" ShowStartingNode="false" />
+        <asp:SiteMapDataSource ID="PageMapDataSource" runat="server" ShowStartingNode="false" />
+        <asp:SiteMapDataSource ID="ChildPageSiteMapData" runat="server" ShowStartingNode="false" />
+        <asp:ScriptManager ID="ScriptManager1" EnablePageMethods="true" runat="server" />
+        <%--<portal:modulewrapper id="mdl136" runat="server" configuremoduleid="136" />--%>
+        <div class="fullpage">
+            <header class="header">
+                <div class="container">
+                    <div class="overlay"></div>
+                    <div class="btn-showmenu"><i aria-hidden="true" class="fa fa-bars"></i></div>
+                    <div class="sitelogo">
+                        <portal:modulewrapper id="mdl206" runat="server" configuremoduleid="206" />
+                    </div>
+                    <div class="col-right">
+                        <div class="tool-right">
+                            <div class="languages">
+                                <portal:modulewrapper id="mdl136" runat="server" configuremoduleid="136" />
+                            </div>
+                            <div class="searchtoggle"><i class="fa fa-search" aria-hidden="true"></i></div>
+                            <div class="search clearfix">
+                                <portal:modulewrapper id="mdl137" runat="server" configuremoduleid="137" />
+                            </div>
+                        </div>
+                        <div class="menu">
+                            <div class="btn-closemenu"><span class="lnr lnr-cross"></span></div>
+                            <div class="sitelogo-mb">
+                                <portal:modulewrapper id="mdl206_1" runat="server" configuremoduleid="206" />
+                            </div>
+                            <portal:modulewrapper id="mdl42" runat="server" configuremoduleid="42" />
+                        </div>                        
+                    </div>
+                </div>
+            </header>
+            <asp:Panel ID="divAlt1" runat="server" CssClass="altcontent1">
+                <asp:ContentPlaceHolder ID="altContent1" runat="server">
+                </asp:ContentPlaceHolder>
+            </asp:Panel>
+            <main>
+                <asp:Panel ID="divLeft" runat="server" CssClass="leftside" Visible="True" SkinID="pnlPlain">
+					<asp:ContentPlaceHolder ID="leftContent" runat="server">
+					</asp:ContentPlaceHolder>
+				</asp:Panel>
+				<asp:Panel ID="divCenter" runat="server" Visible="True" CssClass="center-rightandleftmargins" SkinID="pnlPlain">
+					<asp:ContentPlaceHolder ID="mainContent" runat="server">
+					</asp:ContentPlaceHolder>
+				</asp:Panel>
+				<asp:Panel ID="divRight" runat="server" Visible="True" CssClass="rightside" SkinID="pnlPlain">
+					<asp:ContentPlaceHolder ID="rightContent" runat="server">
+					</asp:ContentPlaceHolder>
+				</asp:Panel>
+				
+				<div class="product-compare"></div>
+				<portal:modulewrapper id="mdl249" runat="server" configuremoduleid="249" />
+				
+				<portal:modulewrapper id="mdl280" runat="server" configuremoduleid="280" />
+            </main>
+            <asp:Panel ID="divAltContent2" runat="server" CssClass="altcontent2">
+                <asp:ContentPlaceHolder ID="altContent2" runat="server"></asp:ContentPlaceHolder>
+			</asp:Panel>
+			
+            <footer class="footer">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row flex flex-wrap">
+                            <div class="col-12 col-lg-3 col-xl-4">
+                                <div class="footer-col">
+                                    <address>
+                                        <portal:modulewrapper id="mdl207" runat="server" configuremoduleid="207" />
+                                    </address>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-9 col-xl-8">
+                                <div class="row flex flex-wrap">
+                                    <div class="col-6 col-md-3 col-lg-3">
+                                        <portal:modulewrapper id="mdl208" runat="server" configuremoduleid="208" />
+                                    </div>
+                                    <div class="col-6 col-md-3 col-lg-3">
+                                        <portal:modulewrapper id="mdl209" runat="server" configuremoduleid="209" />
+                                    </div>
+                                    <div class="col-6 col-md-3 col-lg-3">
+                                        <portal:modulewrapper id="mdl210" runat="server" configuremoduleid="210" />
+                                    </div>
+                                    <div class="col-6 col-md-3 col-lg-3">
+                                        <portal:modulewrapper id="mdl211" runat="server" configuremoduleid="211" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-letter">
+                    <div class="container">
+                        <div class="row flex flex-wrap">
+                            <div class="col-12 col-lg-4">
+                                <div class="footer-newsletter">
+                                    <portal:modulewrapper id="mdl212" runat="server" configuremoduleid="212" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="newsletter">
+                                    <portal:modulewrapper id="mdl213" runat="server" configuremoduleid="213" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="footer-social">
+                                    <portal:modulewrapper id="mdl214" runat="server" configuremoduleid="214" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row flex flex-wrap">
+                            <div class="col-12 col-lg-6">
+                                <portal:modulewrapper id="mdl215" runat="server" configuremoduleid="215" />
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="copyright">
+                                    <portal:modulewrapper id="mdl216" runat="server" configuremoduleid="216" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class="iki-icon">
+                <portal:modulewrapper id="mdl282" runat="server" configuremoduleid="282" />
+            </div>
+        </div>
+        <portal:AutoHidePanel ID="ah1" CssClass="cmsadminpanel" runat="server">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav>
+                        <ul class="nav navbar-nav listmenu">
+                            <portal:AdminMenuLink ID="lnkDashboard" IconCssClass="fa fa-key" RenderAsListItem="true" runat="server" />
+                            <portal:FileManagerLink ID="lnkFileManager" IconCssClass="fa fa-folder-open" RenderAsListItem="true" runat="server" />
+                            <portal:PageEditFeaturesLink ID="lnkPageContent" IconCssClass="fa fa-cog" RenderAsListItem="true" runat="server" />
+                            <portal:PageEditSettingsLink ID="lnkPageSettings" IconCssClass="fa fa-edit" RenderAsListItem="true" runat="server" />
+                            <portal:NewZoneLink ID="lnkNewZone" IconCssClass="fa fa-file" RenderAsListItem="true" runat="server" />
+                            <portal:ZoneEditSettingsLink ID="lnkZoneSettings" IconCssClass="fa fa-edit" RenderAsListItem="true" runat="server" />
+                            <li>
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label class="sr-only">Mode</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:ContentPlaceHolder ID="pageEditContent" runat="server">
+                                        </asp:ContentPlaceHolder>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li><a href="#" id="pullmenucms"><i class="fa fa-chevron-circle-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#pullmenucms").click(function (e) {
+                        e.preventDefault();
+                        if ($(this).parents('.cmsadminpanel').hasClass('toggled')) { ShowToolbar(); Set_Cookie('toolbarOpenState', 'open'); }
+                        else { HideToolbar(); Set_Cookie('toolbarOpenState', 'closed'); }
+                    });
+                    var openState = Get_Cookie('toolbarOpenState');
+                    if (openState != null) { if (openState == 'closed') { HideToolbar(); } if (openState == 'open') { ShowToolbar(); } }
+                });
+                function HideToolbar() { $('.cmsadminpanel').addClass("toggled"); $('.fa-chevron-circle-right').addClass('fa-rotate-180'); }
+                function ShowToolbar() { $('.cmsadminpanel').removeClass("toggled"); $('.fa-chevron-circle-right').removeClass('fa-rotate-180'); }
+            </script>
+        </portal:AutoHidePanel>
+        <portal:woopra id="woopra11" runat="server" />
+    </form>
+</body>
+</html>
