@@ -302,35 +302,27 @@ app.controller("mainControl", function ($scope, $http, $rootScope) {
 		)
 	};
 	$scope.order = function () {
-		const orderOption = $scope.saveImage("preview");
-		orderOption
-			.then(() => {
-				let dataToOrder = {
-					image: $rootScope.imageSaveBASE64,
-					productId: parseInt($scope.CAT_URL),
-					pat: $rootScope.dataPat.toString().replace(",,", ",-,")
-				};
-				console.table(dataToOrder) //Bật dòng này để kiểm tra code base64 của ảnh đã vào hay chưa
-				///////////////Code cho hàm Order vào đây////////////////////////
+		let dataToOrder = {
+			productId: parseInt($scope.CAT_URL),
+			pat: $rootScope.dataPat.toString().replace(",,", ",-,")
+		};
 
 
-				//Chặn chuyển trang
-				$http({
-					method: "POST",
-					url: baoNguyenApp.API.URL + baoNguyenApp.API.save,
-					data: dataToOrder
-				}).then(
-					function (response) {
-						if (response.data.success) {
-							window.location.href = response.data.cartpageurl;
-						}
-					},
-					function (error) {
-						console.log("Lỗi Save: " + error);
-					}
-				);
-			})
-			.catch(err => console.log(err));
+
+		$http({
+			method: "POST",
+			url: baoNguyenApp.API.URL + baoNguyenApp.API.save,
+			data: dataToOrder
+		}).then(
+			function (response) {
+				if (response.data.success) {
+					window.location.href = response.data.cartpageurl;
+				}
+			},
+			function (error) {
+				console.log("Lỗi Save: " + error);
+			}
+		);
 	};
 });
 // Child Controller

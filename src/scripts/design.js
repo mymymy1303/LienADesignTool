@@ -1,7 +1,7 @@
 var baoNguyenApp = {
 	// API hệ thống 
 	API: {
-		URL: "http://preview6599.canhcam.com.vn",
+		URL: "",
 		main: '/Product/Services/Api/Drap/PreLoader.ashx',
 		menu: '/Product/Services/Api/Drap/List.ashx',
 		save: '/Product/Services/Api/Drap/Save.ashx',
@@ -86,6 +86,10 @@ $(document).ready(() => {
 	})
 	setToolPos()
 	equalBoxSize()
+	if ($(window).width() < 992) {
+		$('.select-nav').css('height', $(window).height() - $('.apply-content').height() - 180)
+		$('.done-bar').detach().prependTo('.select')
+	}
 });
 
 $(window).resize(() => {

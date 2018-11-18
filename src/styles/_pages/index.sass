@@ -2,12 +2,178 @@
 // Phần Slider
 /////////////////////////////////
 
+
+
 .container-fluid-full
 	width: 100%
 	height: calc(100vh - 60px)
 .canhcam-design-1
 	+media-breakpoint-down(md)
+		height: calc(100vh - 60px)
 		overflow-x: hidden
+		.box-product
+			// box-shadow: 0 0 0 1px darken($whites,5%) inset
+			position: relative
+			top: -1px
+			width: calc(100% + 2px)
+			.showloading-material
+				+pos(abs, 0 null null 0)
+				width: 100%
+				height: 100%
+				opacity: 0
+				z-index: -1
+				transition: .3s all ease-in-out
+				background: #fff
+				display: flex
+				justify-content: center
+				align-items: center
+				&.active
+					opacity: 1
+					z-index: 100
+				.inner
+					display: block
+					background: $liena
+					color: $lienavang
+					+bor-rad(5px)
+					+pad(.75rem 1.2rem)
+					+mar(0 auto)
+					width: auto
+					text-align: center
+					max-width: 200px
+			.apply-content
+				overflow: hidden
+		.select
+			display: flex
+			flex-direction: column-reverse
+			.select-color
+				height: auto !important
+				background-image: -moz-linear-gradient( 0deg, rgb(13,29,66) 0%, rgb(13,37,88) 28%, rgb(13,45,110) 52%, rgb(15,52,133) 75%, rgb(21,60,156) 100%, rgb(21,60,156) 100%)
+				background-image: -webkit-linear-gradient( 0deg, rgb(13,29,66) 0%, rgb(13,37,88) 28%, rgb(13,45,110) 52%, rgb(15,52,133) 75%, rgb(21,60,156) 100%, rgb(21,60,156) 100%)
+				background-image: -ms-linear-gradient( 0deg, rgb(13,29,66) 0%, rgb(13,37,88) 28%, rgb(13,45,110) 52%, rgb(15,52,133) 75%, rgb(21,60,156) 100%, rgb(21,60,156) 100%)
+				ul
+					display: flex
+					justify-content: center
+					align-items: center
+					text-align: center
+					+mar(0)
+					+pad(0)
+					font-size: 0
+					li
+						list-style-type: none
+						position: relative
+						height: 60px
+						width: 20%
+						a
+							display: flex
+							justify-content: center
+							align-items: center
+							width: 100%
+							height: 100%
+							border: 0
+							outline: none
+							box-shadow: none
+							img
+								max-height: 25px
+								filter: brightness(0) invert(1)
+							span 
+								display: none
+						&.active
+							background-color: #ffffff
+							a
+								outline: none
+								box-shadow: none
+								background: #fff
+								img
+									filter: brightness(1) invert(0)
+			.select-nav
+				position: relative
+				height: 100%
+				overflow-y: scroll
+				// padding-bottom: 10rem
+				.showloading
+					+pos(abs, 0 null null 0)
+					width: 100%
+					height: 100%
+					+pad(1rem)
+					z-index: 999
+					background: #fff
+					display: flex
+					justify-content: center
+					align-items: center
+					opacity: 0
+					z-index: -1
+					transition: .3s all ease-in-out
+					&.active
+						opacity: 1
+						z-index: 100
+				.select-nav-color
+					height: 100%
+					select 
+						+bor-rad(0)
+					ul.list-item
+						margin: 0
+						padding: 0
+						display: flex
+						flex-wrap: wrap
+						align-items: center
+						justify-content: center
+						width: 100%
+						height: 100%
+						li.item
+							display: block
+							flex: 0 0 calc((100% - 60px)/5)
+							width: calc((100% - 60px)/5)
+							margin: 5px
+							transition: .3s ease-in-out
+							margin-bottom: .5rem
+							background-size: cover
+							background-position: center center
+							position: relative
+							height: 60px
+							+media-breakpoint-up(sm)
+								height: 100px
+							+media-breakpoint-up(md)
+								height: 120px
+							.box
+								height: 100%
+								width: 100%
+								display: flex
+								flex-direction: column
+								text-decoration: none
+								.color
+									+size(100%, 5rem)
+									min-width: 50px
+									background: #dfdfdf
+									border: 1px solid #e6e6e6
+									border-bottom: 0
+								.text
+									color: #666666
+									+fz(.5rem)
+									height: 3rem
+									display: flex
+									flex-direction: column
+									align-items: center
+									justify-content: center
+									border: 1px solid #e6e6e6
+									border-top: 0
+									strong
+										+fw(500)
+										+lh(1rem)
+									span
+										display: block
+										+fz(10px)
+							&.active
+								.box
+									cursor: pointer
+									box-shadow: 0px 0px 10px 1px rgba(21,60,156,0.75)
+									.text
+										color: #153c9c
+										border: 1px solid #153c9c
+										border-top: 0
+									.color
+										border: 1px solid #153c9c
+										border-bottom: 0
+
 	+media-breakpoint-up(lg)
 		height: calc(100vh - 60px)
 		overflow: hidden
@@ -240,44 +406,96 @@
 	// +pos(abs, null 0 0 null)
 	// +pad(1.5rem)
 	// height: 8rem
-	margin-bottom: 1rem
-	+fz(.8rem)
-	width: 100%
-	> .btn
-		box-shadow: 0 1px 11px 5px rgba(0,0,0,.15)
-		+bor-rad(0)
-		+pad(1rem 2rem)
-		text-transform: uppercase
-		+fz(1.3rem)
-		color: $liena
-		+fw(500)
-		cursor: pointer
-		&:hover, &:active 
-			background: $liena 
-			color: #fff
-	ul 
-		flex-wrap: nowrap
-		box-shadow: 0 1px 11px 5px rgba(0,0,0,.15)
-		justify-content: space-between
-		li 
-			+mar(0_)
-			flex: 0 0 33.333333%
-			max-width: 33.333333%
-			.btn 
-				text-transform: uppercase
-				+bor-rad(0)
-				+fz(1.1rem)
-				color: #fff
-				+fw(500)
-				cursor: pointer
-				display: block
-				+pad(.75rem .5rem)
+	+media-breakpoint-down(md)
+		+fz(.8rem)
+		width: 100%
+		position: relative
+		p.text-muted
+			display: none
+		hr
+			display: none
+		> .btn
+			box-shadow: 0 1px 11px 5px rgba(0,0,0,.15)
+			+bor-rad(0)
+			+pad(1rem 2rem)
+			text-transform: uppercase
+			+fz(1.3rem)
+			color: $liena
+			+fw(500)
+			cursor: pointer
+			&:hover, &:active 
 				background: $liena 
-				i 
-					width: 2rem
-				&:hover, &:active 
-					background: #fff
-					color: $liena
+				color: #fff
+		ul 
+			flex-wrap: nowrap
+			justify-content: space-between
+			height: 60px
+			background-image: -moz-linear-gradient( 0deg, rgb(13,29,66) 0%, rgb(13,37,88) 28%, rgb(13,45,110) 52%, rgb(15,52,133) 75%, rgb(21,60,156) 100%, rgb(21,60,156) 100%)
+			background-image: -webkit-linear-gradient( 0deg, rgb(13,29,66) 0%, rgb(13,37,88) 28%, rgb(13,45,110) 52%, rgb(15,52,133) 75%, rgb(21,60,156) 100%, rgb(21,60,156) 100%)
+			background-image: -ms-linear-gradient( 0deg, rgb(13,29,66) 0%, rgb(13,37,88) 28%, rgb(13,45,110) 52%, rgb(15,52,133) 75%, rgb(21,60,156) 100%, rgb(21,60,156) 100%)
+			li 
+				+mar(0_)
+				flex: 0 0 33.333333%
+				max-width: 33.333333%
+				.btn
+					margin: 0
+					padding: 0
+					border: 0
+					outline: none
+					box-shadow: none
+					text-transform: uppercase
+					font-size: 12px
+					height: 100%
+					display: flex
+					justify-content: center
+					align-items: center
+					color: #ffffff
+					border-radius: 0
+					i
+						margin-right: 6px
+					&:hover, &:active 
+						background: #fff
+						color: $liena
+						box-shadow: none
+	+media-breakpoint-up(lg)
+		margin-bottom: 1rem
+		+fz(.8rem)
+		width: 100%
+		> .btn
+			box-shadow: 0 1px 11px 5px rgba(0,0,0,.15)
+			+bor-rad(0)
+			+pad(1rem 2rem)
+			text-transform: uppercase
+			+fz(1.3rem)
+			color: $liena
+			+fw(500)
+			cursor: pointer
+			&:hover, &:active 
+				background: $liena 
+				color: #fff
+		ul 
+			flex-wrap: nowrap
+			box-shadow: 0 1px 11px 5px rgba(0,0,0,.15)
+			justify-content: space-between
+			li 
+				+mar(0_)
+				flex: 0 0 33.333333%
+				max-width: 33.333333%
+				.btn 
+					text-transform: uppercase
+					+bor-rad(0)
+					+fz(1.1rem)
+					color: #fff
+					+fw(500)
+					cursor: pointer
+					display: block
+					+pad(.75rem .5rem)
+					background: $liena 
+					i 
+						width: 2rem
+					&:hover, &:active 
+						background: #fff
+						color: $liena
 .pagebottom
 	color: #fff 
 	+pos(abs, null 0 0 null)
