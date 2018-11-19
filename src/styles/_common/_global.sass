@@ -8,7 +8,7 @@ $lienavang: #fedd14
 	display: flex
 	justify-content: center
 	align-items: center
-	position: absolute
+	position: fixed
 	flex-direction: column
 	top: 0
 	left: 0
@@ -33,14 +33,13 @@ $lienavang: #fedd14
 		max-width: 0
 
 +media-breakpoint-down(md)
-	html, body
+	html
 		font-family: 'Montserrat', sans-serif
 		font-size: 14px
-		height: 100vh
 		width: 100%
-		position: fixed
-		top: 0
-		left: 0
+	body
+		main
+			height: 100vh
 +media-breakpoint-up(lg)
 	html, body
 		font-family: 'Montserrat', sans-serif

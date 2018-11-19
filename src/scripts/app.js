@@ -301,6 +301,7 @@ app.controller("mainControl", function ($scope, $http, $rootScope) {
 			`https://www.facebook.com/sharer/sharer.php?u=${newsFullPathEncode}&src=sdkpreparse`
 		)
 	};
+
 	$scope.order = function () {
 		let dataToOrder = {
 			productId: parseInt($scope.CAT_URL),

@@ -76,7 +76,7 @@ function equalBoxSize() {
 }
 
 // Canh Cam Code
-$(document).ready(() => {
+$(document).ready(function () {
 	baoNguyenApp.init()
 	baoNguyenApp.fetch(baoNguyenApp.API.URL + baoNguyenApp.API.main, 'GET', (e) => {
 		// console.log(e.responseJSON)
@@ -87,7 +87,7 @@ $(document).ready(() => {
 	setToolPos()
 	equalBoxSize()
 	if ($(window).width() < 992) {
-		$('.select-nav').css('height', $(window).height() - $('.apply-content').height() - 180)
+		$('.select-nav').css('height', $('main').height() - $('.apply-content').height() - 120)
 		$('.done-bar').detach().prependTo('.select')
 	}
 });
@@ -96,4 +96,7 @@ $(window).resize(() => {
 	setTimeout(() => {
 		setToolPos()
 	}, 500);
+	if ($(window).width() < 992) {
+		$('.select-nav').css('height', $('main').height() - $('.apply-content').height() - 120)
+	}
 });

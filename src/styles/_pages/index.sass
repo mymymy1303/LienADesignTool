@@ -9,7 +9,7 @@
 	height: calc(100vh - 60px)
 .canhcam-design-1
 	+media-breakpoint-down(md)
-		height: calc(100vh - 60px)
+		height: 100vh
 		overflow-x: hidden
 		.box-product
 			// box-shadow: 0 0 0 1px darken($whites,5%) inset
@@ -108,6 +108,9 @@
 						z-index: 100
 				.select-nav-color
 					height: 100%
+					display: flex
+					justify-content: center
+					align-items: center
 					select 
 						+bor-rad(0)
 					ul.list-item
@@ -118,7 +121,6 @@
 						align-items: center
 						justify-content: center
 						width: 100%
-						height: 100%
 						li.item
 							display: block
 							flex: 0 0 calc((100% - 60px)/5)
@@ -130,6 +132,13 @@
 							background-position: center center
 							position: relative
 							height: 60px
+							@media screen and (min-height: 700px)
+								flex: 0 0 calc((100% - 60px)/4)
+								width: calc((100% - 60px)/4)
+							@media screen and (min-height: 800px)
+								margin: 10px
+								flex: 0 0 calc((100% - 120px)/3)
+								width: calc((100% - 120px)/3)
 							+media-breakpoint-up(sm)
 								height: 100px
 							+media-breakpoint-up(md)
