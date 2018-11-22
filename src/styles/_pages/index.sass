@@ -50,6 +50,11 @@
 				background-image: -moz-linear-gradient( 0deg, rgb(13,29,66) 0%, rgb(13,37,88) 28%, rgb(13,45,110) 52%, rgb(15,52,133) 75%, rgb(21,60,156) 100%, rgb(21,60,156) 100%)
 				background-image: -webkit-linear-gradient( 0deg, rgb(13,29,66) 0%, rgb(13,37,88) 28%, rgb(13,45,110) 52%, rgb(15,52,133) 75%, rgb(21,60,156) 100%, rgb(21,60,156) 100%)
 				background-image: -ms-linear-gradient( 0deg, rgb(13,29,66) 0%, rgb(13,37,88) 28%, rgb(13,45,110) 52%, rgb(15,52,133) 75%, rgb(21,60,156) 100%, rgb(21,60,156) 100%)
+				width: 100%
+				position: fixed
+				bottom: 60px
+				left: 0
+				z-index: 999
 				ul
 					display: flex
 					justify-content: center
@@ -107,7 +112,7 @@
 						opacity: 1
 						z-index: 100
 				.select-nav-color
-					height: 100%
+					height: auto
 					display: flex
 					justify-content: center
 					align-items: center
@@ -121,7 +126,7 @@
 						align-items: center
 						justify-content: center
 						width: 100%
-						height: 100%
+						height: auto
 						li.item
 							display: block
 							flex: 0 0 calc((100% - 60px)/5)
@@ -224,6 +229,7 @@
 			flex-wrap: wrap
 			height: calc(100vh - 60px)
 			.select-color
+				margin-top: 1rem
 				display: flex
 				flex-direction: column
 				flex: 0 0 130px
@@ -241,7 +247,6 @@
 						+fz(.85rem)
 						border-bottom: 1px solid darken($whites,10%)
 						position: relative
-						height: 100%
 						display: flex
 						justify-content: center
 						align-items: center
@@ -419,7 +424,10 @@
 	+media-breakpoint-down(md)
 		+fz(.8rem)
 		width: 100%
-		position: relative
+		position: fixed
+		bottom: 0
+		left: 0
+		z-index: 999
 		p.text-muted
 			display: none
 		hr
